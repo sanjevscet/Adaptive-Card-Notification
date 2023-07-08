@@ -16,9 +16,15 @@ const httpTrigger: AzureFunction = async function (
   context: Context,
   req: HttpRequest
 ): Promise<void> {
+  const postedData: CardData = req.body;
+  console.log({ postedData });
+  // const name = body?.name;
+  // if (name) {
+  //   data.title = name;
+  // }
   for (const target of await notificationApp.notification.installations()) {
     await target.sendAdaptiveCard(
-      AdaptiveCards.declare<CardData>(notificationTemplate).render(data)
+      AdaptiveCards.declare<CardData>(notificationTemplate).render(postedData)
     );
   }
 
