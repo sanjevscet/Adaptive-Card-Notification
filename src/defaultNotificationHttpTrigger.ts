@@ -22,6 +22,15 @@ const httpTrigger: AzureFunction = async function (
   // if (name) {
   //   data.title = name;
   // }
+  const priority = +req.body?.priority;
+  if (priority > 2) {
+    notificationTemplate.body[0].color = "warning";
+  }
+  else if (priority === 1 || priority === 2) {
+    notificationTemplate.body[0].color = "good";
+  } else {
+    notificationTemplate.body[0].color = "dark";
+  }
   for (const target of await notificationApp.notification.installations()) {
     await target.sendAdaptiveCard(
       AdaptiveCards.declare<CardData>(notificationTemplate).render(postedData)
