@@ -17,7 +17,7 @@ const httpTrigger: AzureFunction = async function (
   req: HttpRequest
 ): Promise<void> {
   const postedData: CardData = req.body;
-  console.log({ postedData });
+  console.log({ postedData, context });
   // const name = body?.name;
   // if (name) {
   //   data.title = name;
