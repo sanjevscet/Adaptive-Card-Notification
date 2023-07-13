@@ -1,0 +1,20 @@
+{
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "TextBlock",
+      "weight": "Bolder",
+      "text": "Notify U",
+      "size": "Large",
+      "weight": "Bolder",
+      "color": "accent"
+    },
+    {
+      "type": "TextBlock",
+      "text": "Welcome to WFD notification!",
+      "wrap": true
+    }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.4"
+}

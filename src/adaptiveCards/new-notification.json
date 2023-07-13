@@ -39,7 +39,7 @@
     {
       "type": "Action.OpenUrl",
       "title": "View Details",
-      "url": "${notificationUrl}"
+      "url": "${NotificationUrl}"
     }
   ]
 }
